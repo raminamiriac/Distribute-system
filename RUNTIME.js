@@ -1,13 +1,13 @@
-public boolean timeoutS1ToS2()
+public boolean timeoutC1ToC2()
  {
  boolean wasEventProcessed = false;
  
  Status aStatus = status;
  switch (aStatus)
  {
- case S1:
+ case C1:
  exitStatus();
- setStatus(Status.S2);
+ setStatus(Status.C2);
  wasEventProcessed = true;
  break;
  }
@@ -16,11 +16,11 @@ private void exitStatus()
  {
  switch(status)
  {
- case S1:
- stopTimeoutS1ToS2Handler();
+ case C1:
+ stopTimeoutC1ToC2Handler();
  break;
- case S2:
- stopTimeoutS2ToS1Handler();
+ case C2:
+ stopTimeoutC2ToC1Handler();
  break;
  }
  } 
@@ -31,11 +31,11 @@ private void setStatus(Status aStatus)
  // entry actions and do activities
  switch(status)
  {
- case S1:
- startTimeoutS1ToS2Handler();
+ case C1:
+ startTimeoutC1ToC2Handler();
  break;
- case S2:
- startTimeoutS2ToS1Handler();
+ case C2:
+ startTimeoutC2ToC1Handler();
  break;
  }
  } 
